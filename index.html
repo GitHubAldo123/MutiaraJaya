@@ -9,6 +9,7 @@
     <meta name="Author" content="Aldo">
     
     <!-- link penghubung -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="img/logoMT.jpg" type="image/x-icon">
     <link rel="stylesheet" href="css/index.css">
@@ -59,6 +60,15 @@
         const mobileMenu = document.getElementById('mobileMenu');
         mobileMenu.classList.toggle('show');
     }
+
+    window.addEventListener('scroll', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        if (window.scrollY > 100) {
+            scrollToTopBtn.classList.remove('hidden');
+        } else {
+            scrollToTopBtn.classList.add('hidden');
+        }
+    });
     </script>
     
      <!-- Nama Toko -->
@@ -68,7 +78,7 @@
 <body class="bg-gray-100">
     <nav class="p-4 bg-yellow-400">
         <div class="container flex items-center justify-between mx-auto">
-            <a href="#" class="text-xl font-bold text-white">MUTIARAJAYA</a>
+            <a href="#" class="text-xl font-bold text-white" id="home">MUTIARAJAYA</a>
             <button type="button" class="inline-flex items-center justify-center p-2 text-gray-400 transition-colors rounded-md sm:hidden hover:text-gray-500" onclick="toggleMenu()">
                 <span class="sr-only">Toggle navigation</span>
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -109,7 +119,7 @@
             <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
                 <!-- Produk 1 -->
                 <div class="p-6 bg-white rounded-lg shadow-md">
-                    <img src="img/emas24.webp" alt="Produk 1" class="mb-4 rounded-lg">
+                    <img src="img/emas24.jpg" alt="Produk 1" class="mb-4 rounded-lg">
                     <h3 class="mb-2 text-xl font-bold">Emas 24 Karat</h3>
                     <p class="mb-2 text-gray-700">Harga: Rp 1.000.000/g</p>
                     <a href="component/payment.html">
@@ -118,7 +128,7 @@
                     <div class="mt-4">
                         <h4 class="mb-2 text-lg font-semibold">Artikel Berita</h4>
                         <p class="text-gray-700">Deskripsi singkat tentang berita terbaru mengenai Emas 24 Karat.</p>
-                        <a href="#" class="font-semibold text-yellow-500 hover:text-yellow-600">Baca Selengkapnya</a>
+                        <a href="component/blogproduk.html" class="font-semibold text-yellow-500 hover:text-yellow-600">Baca Selengkapnya</a>
                     </div>
                 </div>
                 <!-- Produk 2 -->
@@ -132,7 +142,7 @@
                     <div class="mt-4">
                         <h4 class="mb-2 text-lg font-semibold">Artikel Berita</h4>
                         <p class="text-gray-700">Deskripsi singkat tentang berita terbaru mengenai Emas 18 Karat.</p>
-                        <a href="#" class="font-semibold text-yellow-500 hover:text-yellow-600">Baca Selengkapnya</a>
+                        <a href="component/blogproduk.html" class="font-semibold text-yellow-500 hover:text-yellow-600">Baca Selengkapnya</a>
                     </div>
                 </div>
                 <!-- Produk 3 -->
@@ -146,7 +156,7 @@
                     <div class="mt-4">
                         <h4 class="mb-2 text-lg font-semibold">Artikel Berita</h4>
                         <p class="text-gray-700">Deskripsi singkat tentang berita terbaru mengenai Emas Antik.</p>
-                        <a href="#" class="font-semibold text-yellow-500 hover:text-yellow-600">Baca Selengkapnya</a>
+                        <a href="component/blogproduk.html" class="font-semibold text-yellow-500 hover:text-yellow-600">Baca Selengkapnya</a>
                     </div>
                 </div>
                 <!-- Produk 4 -->
@@ -160,12 +170,12 @@
                     <div class="mt-4">
                         <h4 class="mb-2 text-lg font-semibold">Artikel Berita</h4>
                         <p class="text-gray-700">Deskripsi singkat tentang berita terbaru mengenai Emas 24 Karat.</p>
-                        <a href="#" class="font-semibold text-yellow-500 hover:text-yellow-600">Baca Selengkapnya</a>
+                        <a href="component/blogproduk.html" class="font-semibold text-yellow-500 hover:text-yellow-600">Baca Selengkapnya</a>
                     </div>
                 </div>
                 <!-- Produk 5 -->
                 <div class="p-6 bg-white rounded-lg shadow-md">
-                    <img src="img/emas300.jpeg" alt="Produk 5" class="mb-4 rounded-lg">
+                    <img src="img/emas300.jpg" alt="Produk 5" class="mb-4 rounded-lg">
                     <h3 class="mb-2 text-xl font-bold">Emas 18 Karat</h3>
                     <p class="mb-2 text-gray-700">Harga: Rp 300.000/g</p>
                     <a href="component/payment.html">
@@ -174,12 +184,12 @@
                     <div class="mt-4">
                         <h4 class="mb-2 text-lg font-semibold">Artikel Berita</h4>
                         <p class="text-gray-700">Deskripsi singkat tentang berita terbaru mengenai Emas 18 Karat.</p>
-                        <a href="#" class="font-semibold text-yellow-500 hover:text-yellow-600">Baca Selengkapnya</a>
+                        <a href="component/blogproduk.html" class="font-semibold text-yellow-500 hover:text-yellow-600">Baca Selengkapnya</a>
                     </div>
                 </div>
                 <!-- Produk 6 -->
                 <div class="p-6 bg-white rounded-lg shadow-md">
-                    <img src="img/emas200.webp" alt="Produk 6" class="mb-4 rounded-lg">
+                    <img src="img/emas200.jpg" alt="Produk 6" class="mb-4 rounded-lg">
                     <h3 class="mb-2 text-xl font-bold">Emas Antik</h3>
                     <p class="mb-2 text-gray-700">Harga: Rp 150.000/g</p>
                     <a href="component/payment.html">
@@ -188,7 +198,7 @@
                     <div class="mt-4">
                         <h4 class="mb-2 text-lg font-semibold">Artikel Berita</h4>
                         <p class="text-gray-700">Deskripsi singkat tentang berita terbaru mengenai Emas Antik.</p>
-                        <a href="#" class="font-semibold text-yellow-500 hover:text-yellow-600">Baca Selengkapnya</a>
+                        <a href="component/blogproduk.html" class="font-semibold text-yellow-500 hover:text-yellow-600">Baca Selengkapnya</a>
                     </div>
                 </div>
             </div>
@@ -217,6 +227,11 @@
             </div>
         </div>
     </footer>
+    
+    <!-- kembali ke home -->
+    <a href="#home" id="scrollToTopBtn" class="fixed z-50 hidden p-2 text-white bg-gray-600 rounded-full bottom-4 right-4 hover:text-gray-400">
+        <i class="text-2xl bi bi-capslock-fill"></i>
+    </a>
+    
 </body>
-
 </html>
