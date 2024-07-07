@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Membuat Website toko emas MutiaraJaya">
+    <meta name="Keyword" content="HTML, CSS, TAILWINDCSS, JAVASCRIPT">
+    <meta name="Author" content="Aldo">
+    
+    <!-- link penghubung -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/logoMT.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="js/index.js">
+    <style>
+        /* Navbar responsive dan icon hidden menu mobile */
+        @media (min-width: 768px) {
+            .mobile-menu {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .desktop-menu {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #f9fafb;
+                width: 100%;
+                padding: 10px;
+                z-index: 1000;
+                box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            .mobile-menu.show {
+                display: block;
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .mobile-menu a {
+                display: block;
+                padding: 8px 0;
+                text-align: center;
+            }
+        }
+    </style>
+    <script>
+    function toggleMenu() {
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenu.classList.toggle('show');
+    }
+    </script>
+    
+     <!-- Nama Toko -->
+    <title>Toko Emas</title>
+</head>
+
+<body class="bg-gray-100">
+    <nav class="p-4 bg-yellow-400">
+        <div class="container flex items-center justify-between mx-auto">
+            <a href="#" class="text-xl font-bold text-white">MUTIARAJAYA</a>
+            <button type="button" class="inline-flex items-center justify-center p-2 text-gray-400 transition-colors rounded-md sm:hidden hover:text-gray-500" onclick="toggleMenu()">
+                <span class="sr-only">Toggle navigation</span>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <div id="desktopMenu" class="hidden space-x-4 md:flex md:items-center">
+                <a href="#" class="text-white hover:text-gray-300">Home</a>
+                <a href="#products" class="text-white hover:text-gray-300">Produk</a>
+                <a href="#footer" class="text-white hover:text-gray-300">Kontak</a>
+                <a href="component/login.html" class="text-white hover:text-gray-300">Login</a>
+                <a href="component/registrasi.html" class="px-4 py-2 text-yellow-500 transition duration-300 bg-white border border-yellow-500 rounded-md hover:bg-yellow-400 hover:text-white hover:border-transparent">Daftar</a>
+            </div>
+            <div id="mobileMenu" class="space-y-2 mobile-menu md:space-y-0 md:flex md:items-center">
+                <a href="#" class="block text-gray-600 md:inline-block" onclick="toggleMenu()">Home</a>
+                <a href="#products" class="block text-gray-600 md:inline-block" onclick="toggleMenu()">Produk</a>
+                <a href="#footer" class="block text-gray-600 md:inline-block" onclick="toggleMenu()">Kontak</a>
+                <a href="component/login.html" class="block text-gray-600 md:inline-block" onclick="toggleMenu()">Login</a>
+                <a href="component/registrasi.html" class="block px-4 py-2 text-yellow-500 transition duration-300 bg-white border border-yellow-500 rounded-md hover:bg-yellow-400 hover:text-white hover:border-transparent md:inline-block" onclick="toggleMenu()">Daftar</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Landing Page -->
+    <section class="relative py-20 bg-image">
+        <div class="absolute inset-0 bg-gray-900 opacity-50"></div>
+        <div class="container relative z-10 mx-auto text-center">
+            <h1 class="mb-6 text-4xl font-bold leading-tight text-white md:text-6xl">Selamat Datang di Toko Emas</h1>
+            <p class="mb-8 text-lg text-white md:text-xl">Temukan koleksi emas berkualitas tinggi kami.</p>
+            <a href="#products" class="px-6 py-3 font-semibold text-white bg-yellow-500 rounded-full shadow-md hover:bg-yellow-600">Lihat Produk</a>
+        </div>
+    </section>
+
+    <!-- Produk Emas -->
+    <section id="products" class="px-4 py-16 bg-gray-100">
+        <div class="container mx-auto">
+            <h2 class="mb-12 text-3xl font-bold text-center md:text-4xl">Produk Emas</h2>
+            <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Produk 1 -->
+                <div class="p-6 bg-white rounded-lg shadow-md">
+                    <img src="img/emas24.webp" alt="Produk 1" class="mb-4 rounded-lg">
+                    <h3 class="mb-2 text-xl font-bold">Emas 24 Karat</h3>
+                    <p class="mb-2 text-gray-700">Harga: Rp 1.000.000/g</p>
+                    <a href="component/payment.html">
+                        <button class="px-4 py-2 text-white bg-yellow-500 rounded-lg">Beli Sekarang</button>
+                    </a>
+                    <div class="mt-4">
+                        <h4 class="mb-2 text-lg font-semibold">Artikel Berita</h4>
+                        <p class="text-gray-700">Deskripsi singkat tentang berita terbaru mengenai Emas 24 Karat.</p>
+                        <a href="#" class="font-semibold text-yellow-500 hover:text-yellow-600">Baca Selengkapnya</a>
+                    </div>
+                </div>
+                <!-- Produk 2 -->
+                <div class="p-6 bg-white rounded-lg shadow-md">
+                    <img src="img/emas900.jpg" alt="Produk 2" class="mb-4 rounded-lg">
+                    <h3 class="mb-2 text-xl font-bold">Emas 18 Karat</h3>
+                    <p class="mb-2 text-gray-700">Harga: Rp 800.000/g</p>
+                    <a href="component/payment.html">
+                        <button class="px-4 py-2 text-white bg-yellow-500 rounded-lg">Beli Sekarang</button>
+                    </a>
+                    <div class="mt-4">
+                        <h4 class="mb-2 text-lg font-semibold">Artikel Berita</h4>
+                        <p class="text-gray-700">Deskripsi singkat tentang berita terbaru mengenai Emas 18 Karat.</p>
+                        <a href="#" class="font-semibold text-yellow-500 hover:text-yellow-600">Baca Selengkapnya</a>
+                    </div>
+                </div>
+                <!-- Produk 3 -->
+                <div class="p-6 bg-white rounded-lg shadow-md">
+                    <img src="img/emas700.webp" alt="Produk 3" class="mb-4 rounded-lg">
+                    <h3 class="mb-2 text-xl font-bold">Emas Antik</h3>
+                    <p class="mb-2 text-gray-700">Harga: Rp 1.500.000/g</p>
+                    <a href="component/payment.html">
+                        <button class="px-4 py-2 text-white bg-yellow-500 rounded-lg">Beli Sekarang</button>
+                    </a>
+                    <div class="mt-4">
+                        <h4 class="mb-2 text-lg font-semibold">Artikel Berita</h4>
+                        <p class="text-gray-700">Deskripsi singkat tentang berita terbaru mengenai Emas Antik.</p>
+                        <a href="#" class="font-semibold text-yellow-500 hover:text-yellow-600">Baca Selengkapnya</a>
+                    </div>
+                </div>
+                <!-- Produk 4 -->
+                <div class="p-6 bg-white rounded-lg shadow-md">
+                    <img src="img/emas350.jpg" alt="Produk 4" class="mb-4 rounded-lg">
+                    <h3 class="mb-2 text-xl font-bold">Emas 24 Karat</h3>
+                    <p class="mb-2 text-gray-700">Harga: Rp 500.000/g</p>
+                    <a href="component/payment.html">
+                        <button class="px-4 py-2 text-white bg-yellow-500 rounded-lg">Beli Sekarang</button>
+                    </a>
+                    <div class="mt-4">
+                        <h4 class="mb-2 text-lg font-semibold">Artikel Berita</h4>
+                        <p class="text-gray-700">Deskripsi singkat tentang berita terbaru mengenai Emas 24 Karat.</p>
+                        <a href="#" class="font-semibold text-yellow-500 hover:text-yellow-600">Baca Selengkapnya</a>
+                    </div>
+                </div>
+                <!-- Produk 5 -->
+                <div class="p-6 bg-white rounded-lg shadow-md">
+                    <img src="img/emas300.jpeg" alt="Produk 5" class="mb-4 rounded-lg">
+                    <h3 class="mb-2 text-xl font-bold">Emas 18 Karat</h3>
+                    <p class="mb-2 text-gray-700">Harga: Rp 300.000/g</p>
+                    <a href="component/payment.html">
+                        <button class="px-4 py-2 text-white bg-yellow-500 rounded-lg">Beli Sekarang</button>
+                    </a>
+                    <div class="mt-4">
+                        <h4 class="mb-2 text-lg font-semibold">Artikel Berita</h4>
+                        <p class="text-gray-700">Deskripsi singkat tentang berita terbaru mengenai Emas 18 Karat.</p>
+                        <a href="#" class="font-semibold text-yellow-500 hover:text-yellow-600">Baca Selengkapnya</a>
+                    </div>
+                </div>
+                <!-- Produk 6 -->
+                <div class="p-6 bg-white rounded-lg shadow-md">
+                    <img src="img/emas200.webp" alt="Produk 6" class="mb-4 rounded-lg">
+                    <h3 class="mb-2 text-xl font-bold">Emas Antik</h3>
+                    <p class="mb-2 text-gray-700">Harga: Rp 150.000/g</p>
+                    <a href="component/payment.html">
+                        <button class="px-4 py-2 text-white bg-yellow-500 rounded-lg">Beli Sekarang</button>
+                    </a>
+                    <div class="mt-4">
+                        <h4 class="mb-2 text-lg font-semibold">Artikel Berita</h4>
+                        <p class="text-gray-700">Deskripsi singkat tentang berita terbaru mengenai Emas Antik.</p>
+                        <a href="#" class="font-semibold text-yellow-500 hover:text-yellow-600">Baca Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer id="footer" class="py-8 text-white bg-gray-900">
+        <div class="container flex flex-col items-center justify-between mx-auto md:flex-row">
+            <div class="mb-4 md:mb-0">
+                <h3 class="text-xl font-bold">MutiaraJaya</h3>
+                <p>Jl. Gamprit, Getasan, Depok</p>
+                <p>Cirebon, Jawa Barat 45155</p>
+            </div>
+            <div>
+                <h3 class="mb-2 text-xl font-bold">Hubungi Kami</h3>
+                <p>Email: Mutiarajaya123@gmail.com</p>
+                <p>Telepon: 0852-1098-1060</p>
+            </div>
+            <div class="mt-4 md:mt-0">
+                <h3 class="mb-2 text-xl font-bold">Sponsor</h3>
+                <img src="img/sponsor img/trnasfer bank.jpg" alt="Sponsor A Logo" class="w-16 h-auto">
+                <img src="img/sponsor img/partners.jpg" alt="Sponsor B Logo" class="w-16 h-auto">
+                <img src="img/sponsor img/ewallet.jpg" alt="Sponsor C Logo" class="w-16 h-auto">
+                <img src="img/sponsor img/credit-card.jpg" alt="Sponsor D Logo" class="w-16 h-auto">
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

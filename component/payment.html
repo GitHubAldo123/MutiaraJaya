@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrasi Pembayaran</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="p-4 bg-yellow-400">
+        <div class="container flex items-center justify-between mx-auto">
+            <a href="#" class="text-xl font-bold text-white">MUTIARAJAYA</a>
+            <button id="menu-button" class="text-white focus:outline-none md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+            <div id="menu" class="hidden space-x-4 md:flex md:items-center">
+                <a href="../index.html" class="text-white">Home</a>
+                <a href="../index.html" class="text-white">Produk</a>
+                <a href="../index.html" class="text-white">Kontak</a>
+                <a href="login.html" class="text-white">Login</a>
+                <a href="registrasi.html"
+                    class="px-4 py-2 text-yellow-500 transition duration-300 bg-white border border-yellow-500 rounded-md hover:bg-yellow-400 hover:text-white hover:border-transparent">Daftar</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Form Pembayaran -->
+    <section class="px-4 py-16 bg-gray-100">
+        <div class="container mx-auto">
+            <div class="mb-12 text-center">
+                <!-- Logo Toko -->
+                <div class="inline-block p-4 bg-white rounded-full shadow-lg">
+                    <img src="../img/mutiarajaya.jpg" alt="Logo Toko" class="rounded-full" style="width: 150px; height: 150px; object-fit: cover;">
+                </div>
+                <h2 class="mt-4 text-3xl font-bold md:text-4xl">Formulir Pembayaran</h2>
+            </div>
+            <form action="#" method="post" class="max-w-lg p-8 mx-auto bg-white rounded-lg shadow-md">
+                <div class="mb-4">
+                    <label for="nama" class="block mb-2 text-sm font-bold text-gray-700">Nama</label>
+                    <input type="text" id="nama" name="nama" class="form-input" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block mb-2 text-sm font-bold text-gray-700">Email</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                </div>
+                <div class="mb-4">
+                    <label for="alamat" class="block mb-2 text-sm font-bold text-gray-700">Alamat</label>
+                    <textarea id="alamat" name="alamat" rows="4" class="form-input" required></textarea>
+                </div>
+                <div class="mb-4">
+                    <label for="jumlah" class="block mb-2 text-sm font-bold text-gray-700">Jumlah Pembayaran</label>
+                    <input type="number" id="jumlah" name="jumlah" class="form-input" required>
+                </div>
+                <div class="mb-4">
+                    <label for="metode" class="block mb-2 text-sm font-bold text-gray-700">Metode Pembayaran</label>
+                    <select id="metode" name="metode" class="form-input" required>
+                        <option value="transfer">Transfer Bank</option>
+                        <option value="kartu_kredit">Kartu Kredit</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="ovo">OVO</option>
+                        <option value="gopay">GoPay</option>
+                        <option value="dana">DANA</option>
+                        <option value="shopeepay">ShopeePay</option>
+                        <option value="linkaja">LinkAja</option>
+                    </select>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="form-button">Kirim Pembayaran</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer id="footer" class="py-8 text-white bg-gray-900">
+        <div class="container flex flex-col items-center justify-between mx-auto md:flex-row">
+            <div class="mb-4 md:mb-0">
+                <h3 class="text-xl font-bold">MutiaraJaya</h3>
+                <p>Jl. Gamprit, Getasan, Depok </p>
+                <p>Cirebon, Jawa Barat 45155</p>
+            </div>
+            <div>
+                <h3 class="mb-2 text-xl font-bold">Hubungi Kami</h3>
+                <p>Email: Mutiarajaya123@gmail.com</p>
+                <p>Telepon: 0852-1098-1060</p>
+            </div>
+            <div class="mt-4 md:mt-0">
+                <h3 class="mb-2 text-xl font-bold">Sponsor</h3>
+                <img src="../img/sponsor img/credit-crad.jpg" alt="Sponsor A Logo" class="w-16 h-auto">
+                <img src="../img/sponsor img/partners.jpg" alt="Sponsor A Logo" class="w-16 h-auto">
+                <img src="../img/sponsor img/trnasfer bank.jpg" alt="Sponsor A Logo" class="w-16 h-auto">
+                <img src="../img/sponsor img/ewallet.jpg" alt="Sponsor A Logo" class="w-16 h-auto">
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
